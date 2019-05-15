@@ -1,18 +1,18 @@
 /*2) Faça um programa que identifique se em um determinado vetor, existem ou não valores repetidos.*/
 
 function segunda(){
-    var array = [1,2,3,4,5];
-    /*var array = [1,2,3,4,5,5];*/
+    var array = [1,0,2,8,3,1];
     var cont = 0;
+    var repetido = false;
     
     for(var i=0; i<array.length; i++){
-        if(array[i] === array[i+1])
-            cont++;
+        for(var k = 1; k < array.length - 1; k++ ){
+            if(array[i] === array[k])
+                repetido = true;
+                break;
+        }
     }
     
-    if(cont>=1)
-        console.log("Existem valores repetidos");
-    else
-        console.log("Não existem valores repetidos");
-    
+    repetido ?  console.log("Existem valores repetidos") : console.log("Não existem valores repetidos");
+        
 }
